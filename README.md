@@ -2,7 +2,7 @@ FilmDate is a full-stack web application that helps couples find the perfect mov
 
 Unlike traditional recommendation systems, FilmDate generates suggestions based on two movies selected by different people, combining classic rule-based filtering with AI-powered semantic embeddings to deliver personalized and diverse results.
 
- **Key Features**
+ **_Key Features_**
 
 AI-based movie recommendations using sentence embeddings
 
