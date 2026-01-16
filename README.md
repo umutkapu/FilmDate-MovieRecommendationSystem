@@ -14,7 +14,7 @@ React frontend optimized for desktop and mobile
 
 Deployed on Vercel (frontend) and Render (backend)
 
- **Tech Stack**
+ **_Tech Stack_**
 
 Frontend: React, Vite, CSS
 
