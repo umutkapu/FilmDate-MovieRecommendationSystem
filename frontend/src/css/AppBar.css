@@ -1,0 +1,234 @@
+/* =========================================================
+   APP BAR
+   ========================================================= */
+
+.appbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #0f172a, #111827);
+    color: white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+
+    z-index: 40;
+    box-shadow: 0 2px 12px rgba(2, 6, 23, 0.65);
+    height: 72px;
+}
+
+/* =========================================================
+   LEFT
+   ========================================================= */
+
+.appbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo {
+    height: 36px;
+    width: auto;
+    transition: transform 200ms ease, filter 300ms ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.04);
+}
+
+.title {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   CENTER (Trending)
+   ========================================================= */
+
+.appbar-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 30;
+    pointer-events: auto;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    transition: background 200ms ease, color 200ms ease, transform 150ms ease;
+}
+
+.nav-link:hover {
+    color: #e05452;
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.appbar-search {
+    margin-left: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 380px;
+    max-width: 60vw;
+}
+
+.appbar-search input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    outline: none;
+    transition: border 200ms ease, box-shadow 200ms ease;
+}
+
+.appbar-search input::placeholder {
+    color: #aaa;
+}
+
+.appbar-search input:focus {
+    border-color: rgba(239, 68, 68, 0.6);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+}
+
+/* =========================================================
+   SEARCH RESULTS
+   ========================================================= */
+
+.appbar-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #0b1220;
+    border-radius: 12px;
+    max-height: 320px;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    padding: 6px 0;
+    animation: fadeIn 120ms ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.appbar-results li {
+    padding: 10px 14px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 120ms ease;
+}
+
+.appbar-results li:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.appbar-results .empty {
+    color: #777;
+    padding: 12px 14px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+    .appbar {
+        padding: 8px 12px;
+        height: auto;
+        min-height: 60px;
+    }
+
+    .appbar-search {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 8px;
+        flex: 1;
+    }
+
+    .appbar-search input {
+        font-size: 16px;
+    }
+
+    .title {
+        display: none;
+    }
+
+    /* Trending Movies MOBILDE görünmeli */
+    .appbar-center {
+        display: flex;
+        position: static;
+        transform: none;
+        margin-left: 12px;
+    }
+}
+
+/* Bu sadece kısa ekranlı cihazlar (ör. landscape iPhone) için */
+@media (max-height: 500px) {
+    .appbar-center {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 721px) {
+    .appbar {
+        padding: 12px 28px;
+    }
+
+    .appbar-search {
+        width: 440px;
+    }
+}

@@ -1,0 +1,174 @@
+/* Movie selector styles */
+.movie-selector {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 480px) {
+    .movie-selector {
+        max-width: 100%;
+        padding: 0 8px;
+    }
+}
+
+.movie-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.movie-poster img {
+    width: 180px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(2, 6, 23, 0.45);
+}
+
+@media (max-width: 480px) {
+    .movie-poster img {
+        width: 140px;
+        height: 210px;
+    }
+}
+
+
+.movie-title {
+    font-weight: 700;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 10px;
+    border-radius: 999px;
+    margin-top: -34px;
+    transform: translateY(8px);
+}
+
+.movie-label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.input-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrap input {
+    width: 100%;
+    padding: 10px 44px 10px 12px;
+    /* increased right padding to fit clear button */
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    /* white border for non-header search boxes */
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border 200ms ease, box-shadow 200ms ease;
+}
+
+.input-wrap input:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+.clear-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    z-index: 10;
+}
+
+.suggestions {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #0b1220;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    padding: 8px 0;
+    max-height: 220px;
+    overflow: auto;
+    z-index: 60;
+}
+
+.suggestions.open {
+    display: block
+}
+
+.suggestions li {
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background: rgba(255, 255, 255, 0.03)
+}
+
+.suggestions .empty {
+    color: #888;
+    padding: 8px 12px
+}
+
+/* Responsive layout for the two selectors */
+.pickers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    justify-items: center;
+    align-items: start;
+    margin-top: 18px;
+}
+
+@media (min-width: 720px) {
+
+    /* left selector | button | right selector */
+    .pickers {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    .movie-selector {
+        max-width: 420px;
+    }
+
+    .picker-center {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Ensure button is nicely spaced on small screens */
+.picker-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}

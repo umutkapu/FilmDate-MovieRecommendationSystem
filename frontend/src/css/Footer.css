@@ -1,0 +1,78 @@
+/* ---- Footer Styles (full-bleed background, constrained content) ---- */
+.footer {
+    background: linear-gradient(90deg, #0f172a, #111827);
+    color: #fff;
+    padding: 28px 0 18px 0;
+    text-align: center;
+    font-size: 1.05em;
+    margin-top: 48px;
+
+    /* Full-bleed background while avoiding horizontal scroll */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Constrain inner content to the app's max width */
+.footer__container {
+    max-width: 1280px;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.footer__container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__text {
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.footer__links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 1em;
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer__link:hover {
+    color: #e05452;
+}
+
+.footer__divider {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.footer__link__maker {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer__link__maker:hover {
+    color: #e05452;
+}
